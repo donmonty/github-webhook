@@ -11,7 +11,7 @@ app.post('/', async (req, res) => {
   const payload = req.body;
   try {
     const response = await axios.post(
-      `https://api.github.com/repos/donmonty/image-upload/dispatches`,
+      `https://api.github.com/repos/donmonty/console-logos/dispatches`,
       {
         "event_type": "figma-webhook",
         "client_payload": payload
