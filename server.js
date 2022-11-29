@@ -8,7 +8,25 @@ const PORT = process.env.PORT || 8800
 app.use(express.json())
 
 app.post('/', async (req, res) => {
-  const payload = req.body;
+  const {
+    created_at,
+    description,
+    event_type,
+    file_key,
+    file_name,
+    label,
+    webhook_id,
+  } = req.body;
+
+  const payload = {
+    created_at,
+    description,
+    event_type,
+    file_key,
+    file_name,
+    label,
+    webhook_id,
+  };
   try {
     const response = await axios.post(
       `https://api.github.com/repos/donmonty/console-logos/dispatches`,
